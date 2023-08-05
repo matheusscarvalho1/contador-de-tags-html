@@ -1,3 +1,12 @@
+# IMPORTANTE
+Pelo e-mail eu mandei o arquivo compactado sem a pasta node_modules, então será preciso instalar também  junto com as outroas dependências
+
+É DE SUMA IMPORTÂNCIA PARA O FUNCIONAMENTO DESSE PROJETO TER INSTALADO O NODE.JS
+
+```bash
+npm install
+```
+
 # [Contador de TAGS de páginas HTML de acordo com a URL fornecida]
 
 Este é um projeto simples de contador de tags HTML que permite ao usuário inserir uma URL e contar a quantidade de ocorrências de cada tag HTML na página correspondente. O projeto foi desenvolvido com Node.js, Express, MongoDB e utiliza a biblioteca Cheerio para fazer o parsing do HTML.
@@ -18,7 +27,7 @@ Para executar o projeto, siga os passos abaixo:
 
 • Express
 
-• MongoDB
+• Mongoose
 
 • Cheerio
 
