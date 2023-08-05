@@ -12,8 +12,20 @@ Para executar o projeto, siga os passos abaixo:
 
 3. No diretório do projeto, abra um terminal ou prompt de comando e execute o seguinte comando para instalar as dependências:
 
-npm install
+## Dependências Principais
 
+• Node.js
+
+• Express
+
+• MongoDB
+
+• Cheerio
+
+ Use npm install para instalar todas elas de uma vez
+```bash
+npm install
+```
 ## Configuração do MongoDB
 
 Antes de executar o projeto, você precisará configurar uma instância do MongoDB localmente ou em um servidor remoto. O projeto foi configurado para se conectar a uma instância local do MongoDB por padrão. Caso queira configurar para uma instância remota, você pode modificar a URL de conexão em `app.js`:
@@ -23,7 +35,7 @@ mongoose.connect('mongodb://localhost:27017/contador-tags', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
-
+```
 
 Substitua 'mongodb://localhost:27017/contador-tags' pela URL de conexão da sua instância do MongoDB.
 
@@ -47,11 +59,6 @@ Para ver os resultados de contagens anteriores, você pode clicar no link "Mostr
 
 Observação -> Só consegui fazer com que fosse só 1 link por vez, não consegui fazer como foi pedido para colocar uma lista de URLs separadas por vírgula
 
-## Dependências Principais
 
-Node.js
-Express
-MongoDB
-Cheerio
 
-```
+
