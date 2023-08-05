@@ -3,9 +3,6 @@ Pelo e-mail eu mandei o arquivo compactado sem a pasta node_modules, então ser�
 
 É DE SUMA IMPORTÂNCIA PARA O FUNCIONAMENTO DESSE PROJETO TER INSTALADO O NODE.JS
 
-```bash
-npm install
-```
 
 # [Contador de TAGS de páginas HTML de acordo com a URL fornecida]
 
