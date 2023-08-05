@@ -22,6 +22,10 @@ Para executar o projeto, siga os passos abaixo:
 
 • Cheerio
 
+• Axios
+
+• EJS
+
  Use npm install para instalar todas elas de uma vez
 ```bash
 npm install
@@ -42,7 +46,14 @@ Substitua 'mongodb://localhost:27017/contador-tags' pela URL de conexão da sua 
 Executando o Projeto
 Após a instalação das dependências e a configuração do MongoDB, você pode executar o projeto usando o seguinte comando:
 
+```bash
 npm start
+```
+ou
+
+```bash
+npm run start
+```
 
 Isso iniciará o servidor na porta 3000. Agora você pode acessar o contador de tags HTML em seu navegador, digitando a seguinte URL:
 
