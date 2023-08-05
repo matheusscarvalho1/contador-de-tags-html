@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contador</title>
+</head>
+<body>
+  <!-- Título da página -->
+  <h1>Contador de tags HTML, com base na URL inserida no campo abaixo (1 Link por vez)</h1>
+  
+  <!-- Formulário para enviar a URL para o servidor -->
+  <form action="/getTags" method="post">
+    <label for="url"></label>
+    <!-- Área de texto para inserir a URL -->
+    <textarea type="text" id="url" name="url" rows="4" cols="50" placeholder="Insira a URL aqui, como no exemplo: &quot;http://youtube.com&quot; ou &quot;https://www.gov.br/pt-br&quot;" required></textarea>
+    <!-- Botão para enviar a URL -->
+    <button type="submit">Processar</button>
+  </form>
+  
+  <!-- Div para exibir a tabela com os resultados do contador de tags -->
+  <div class="contador" id="contadorTag"></div>
+
+  <!-- Script JavaScript -->
+  <script>
+    // Função para exibir os dados do banco de dados na tela
+    async function displayTagCounts() {
+      // Faz uma requisição para o servidor para obter os dados do contador de tags
+      const response = await fetch('/displayTags');
+      const tagCounts = await response.json();
+
+      // Monta a tabela HTML com base nos dados recebidos do servidor
+      const table = `
+      <table style="width: 60%; border-collapse: collapse; border: 2px solid black;">
+        <tr style="background-color: #f2f2f2;">
+          <th style="padding: 8px; border: 1px solid black;">URL</th>
+          <th style="padding: 8px; border: 1px solid black;">Tag</th>
+          <th style="padding: 8px; border: 1px solid black;">Quantidade</th>
+        </tr>
+        <!-- Código EJS que verifica se há dados disponíveis para exibir na tabela -->
+        <% if (tagCounts && tagCounts.length > 0) { %>
+          <!-- Loop para iterar sobre os resultados do contador de tags e renderizar as linhas da tabela -->
+          <% tagCounts.forEach(({ url, tag, count }) => { %>
+            <tr>
+              <td style="padding: 8px; border: 1px solid black;"><%= url %></td>
+              <td style="padding: 8px; border: 1px solid black;"><%= tag %></td>
+              <td style="padding: 8px; border: 1px solid black;"><%= count %></td>
+            </tr>
+          <% }); %>
+        <% } else { %>
+          <!-- Caso não haja dados disponíveis, exibe uma linha na tabela informando -->
+          <tr>
+            <td colspan="3">Nenhum dado disponível.</td>
+          </tr>
+        <% } %>
+      </table>
+      `;
+
+      // Define o conteúdo da div 'contadorTag' como a tabela HTML montada
+      document.getElementById('contadorTag').innerHTML = table;
+    }
+
+    // Chama a função para exibir os dados do contador de tags assim que a página é carregada
+    displayTagCounts();
+  </script>
+</body>
+</html>

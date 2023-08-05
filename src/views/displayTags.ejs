@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contador</title>
+</head>
+<body>
+  <!-- Título da página -->
+  <h1>Contador de tags HTML, com base na URL inserida no campo abaixo (1 Link por vez)</h1>
+
+  <!-- Formulário para enviar a URL para o servidor -->
+  <form action="/getTags" method="post">
+    <label for="url"></label>
+    <!-- Área de texto para inserir a URL -->
+    <textarea type="text" id="url" name="url" rows="4" cols="50" placeholder="Insira a URL aqui, como no exemplo: &quot;http://youtube.com&quot; ou &quot;https://www.gov.br/pt-br&quot;" required></textarea>
+    <!-- Botão para enviar a URL -->
+    <button type="submit">Processar</button>
+  </form>
+
+  <!-- Tabela para exibir os resultados do contador de tags -->
+  <div class="contador" id="contadorTag">
+    <table style="width: 60%; border-collapse: collapse; border: 2px solid black;">
+      <!-- Cabeçalho da tabela -->
+      <tr style="background-color: #f2f2f2;">
+        <th style="padding: 8px; border: 1px solid black;">URL</th>
+        <th style="padding: 8px; border: 1px solid black;">Tag</th>
+        <th style="padding: 8px; border: 1px solid black;">Quantidade</th>
+      </tr>
+      
+      <!-- Loop para iterar sobre os resultados do contador de tags e renderizar as linhas da tabela -->
+      <% tagCounts.forEach(tagCount => { %>
+        <tr>
+          <!-- Coluna para exibir a URL -->
+          <td style="padding: 8px; border: 1px solid black;"><%= tagCount.url %></td>
+          <!-- Coluna para exibir a tag -->
+          <td style="padding: 8px; border: 1px solid black;"><%= tagCount.tag %></td>
+          <!-- Coluna para exibir a quantidade -->
+          <td style="padding: 8px; border: 1px solid black;"><%= tagCount.count %></td>
+        </tr>
+      <% }); %>
+    </table>
+  </div>
+
+</body>
+</html>
