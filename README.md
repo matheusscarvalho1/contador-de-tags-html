@@ -1,4 +1,4 @@
-# [Nome do Seu Projeto]
+# [Contador de TAGS de páginas HTML de acordo com a URL fornecida]
 
 Este é um projeto simples de contador de tags HTML que permite ao usuário inserir uma URL e contar a quantidade de ocorrências de cada tag HTML na página correspondente. O projeto foi desenvolvido com Node.js, Express, MongoDB e utiliza a biblioteca Cheerio para fazer o parsing do HTML.
 
