@@ -66,8 +66,5 @@ Após o processamento, você será redirecionado para uma página que exibe uma 
 
 Para ver os resultados de contagens anteriores, você pode clicar no link "Mostrar Contagens Anteriores" na parte superior da página.
 
-Observação -> Só consegui fazer com que fosse só 1 link por vez, não consegui fazer como foi pedido para colocar uma lista de URLs separadas por vírgula, porém a aplicação funciona como foi pedido!
-
-
 
 
